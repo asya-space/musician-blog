@@ -1,0 +1,86 @@
+@use '../_abstracts/vars';
+@use '../_abstracts/mixins';
+
+.last-track {
+    margin-bottom: 210px;
+    max-width: 100%;
+
+    .container {
+        display: vars.$flx;
+        justify-content: space-between;
+    }
+}
+
+.picture {
+    &__last-track {
+        width: 40%;
+    }
+}
+
+ol li {
+    display: vars.$flx;
+    align-items: vars.$ctr;
+    counter-increment: digits;
+    content: "0" counter(digits);
+}
+
+ol li:before {
+  content: "0" counter(digits);
+}
+
+ol {
+  list-style: vars.$no;
+  counter-reset: digits;
+}
+
+.playlist {
+    margin-bottom: 50px;
+    padding-left: 0;
+    max-width: 100%;
+    min-height: 200px;
+
+    &__title {
+        min-height: 20px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        color: vars.$light;
+        text-decoration: vars.$no;
+        cursor: vars.$point;
+        transition: color .3s ease-in-out;
+
+        &:active {
+            @include mixins.active;
+        }
+    }
+
+    &__active {
+        @include mixins.active;
+    }
+
+    /* 
+    .playlist .playlist__item::before {
+        margin-right: 20px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 21px;
+        color: rgba(255, 255, 255, 0.5);
+        user-select: vars.$no;
+    }
+    */
+
+    &__item {
+        &::before {
+            margin-right: 20px;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 21px;
+            color: rgba(255, 255, 255, 0.5);
+            user-select: vars.$no;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -1,0 +1,140 @@
+@use '../_abstracts/vars';
+@use '../_abstracts/mixins';
+
+.player, 
+.player__turn {
+    --seek-before-width: 0%;
+    --buffered-width: 0%;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    cursor: vars.$point;
+}
+
+.player {
+    &__turn {
+        margin-bottom: 50px;
+        width: 540px;
+    }
+}
+
+.control,
+.player__control {
+    flex-direction: row;
+    align-items: vars.$ctr;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.control {
+    &__play,
+    &__pause {
+        @include mixins.playPause();
+    }
+
+    &__pause {
+        @include mixins.img();
+    }
+
+    &__timeline {
+        @include mixins.timeline();
+
+        #{&}::-webkit-slider-thumb,
+        #{&}::-moz-range-thumb {
+            @include mixins.sliderThumb();
+        }
+
+        #{&}::-moz-range-thumb {
+            transition: all .5s;
+        }
+
+        #{&}::-webkit-slider-runnable-track {
+            @include mixin.runnable();
+        }
+
+        #{&}::-moz-range-track,
+        #{&}::-ms-track {
+            @include mixins.rangeTrack();
+        }
+    }
+
+    &__timeline[type="range"] {
+        #{&}::-webkit-slider-runnable-track {
+            @include mixins.range();
+        }
+    }
+
+    &__current-time,
+    &__dash,
+    &__duration-time {
+        @include mixins.dash-duration-current();
+    }
+}
+
+.player {
+    &__container {
+        padding-left: 60px;
+        width: 60%;
+    }
+
+    &__title {
+        margin-bottom: 62px;
+        padding-left: 94px;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 72px;
+        background-image: url("../img/list-icon.svg");
+        background-repeat: vars.$norp;
+        background-position: left;
+    }
+    &__play, 
+    &__pause {
+        @include mixins.playPause();
+    }
+
+    &__play {
+        position: relative;
+        display: vars.$flx;
+        flex-direction: row;
+        align-items: vars.$ctr;
+    }
+
+    &__pause {
+        @include mixins.img();
+    }
+
+    &__timeline {
+        @include mixins.timeline();
+        width: 317px;
+
+        #{&}::-webkit-slider-thumb,
+        #{&}::-moz-range-thumb {
+            @include mixins.sliderThumb();
+        }
+
+        #{&}::-moz-range-thumb {
+            transition: all .5s;
+        }
+
+        #{&}::-webkit-slider-runnable-track {
+            @include mixin.runnable();
+        }
+
+        #{&}::-moz-range-track,
+        #{&}::-ms-track {
+            @include mixins.rangeTrack();
+        }
+    }
+
+    &__timeline[type="range"] {
+        #{&}::-webkit-slider-runnable-track {
+            @include mixins.range();
+        }
+    }
+
+    &__current,
+    &__dash,
+    &__duration {
+        @include mixins.dash-duration-current();
+    }
+}

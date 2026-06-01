@@ -1,0 +1,39 @@
+@use 'sass:meta';
+@use './_abstracts/vars';
+@use './_abstracts/mixins';
+@use './_abstracts/reset';
+@use './_layout/nav';
+@use './_layout/intro';
+@use './_components/audio';
+@use './_layout/news';
+@use './_layout/info';
+@use './_components/playlist';
+@use './_layout/follow';
+@use './_layout/gallery';
+@use './_components/slider';
+@use './_layout/footer';
+
+.header {
+    display: vars.$flx;
+    padding-top: 42px;
+    margin-bottom: 161px;
+    max-width: 100%;
+    align-items: vars.$ctr;
+
+    &__logo {
+        align-items: flex-end;
+        margin-right: 65px;
+    }
+}
+
+.main {
+    margin: 0 auto;
+    max-width: 1270px;
+    padding: 161px 50px 0 50px;
+}
+
+@media (max-width: 1536px) {
+  body {
+    max-width: 1536px;
+  }
+}

@@ -1,0 +1,82 @@
+@use './vars';
+
+html {
+    box-sizing: border-box;
+    overflow-x: hidden !important;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 1920px;
+    font-family: vars.$pop;
+    background-image: url("../img/musician-back.webp");
+    background-repeat: vars.$norep;
+    background-position: top center;
+    background-color: var(--dark);
+    overflow-x: hidden;
+}
+
+nav {
+    display: vars.$flx;
+}
+
+a {
+	text-decoration: vars.$no;
+    color: vars.$light;
+}
+
+img {
+	max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    color: vars.$light;
+}
+
+p {
+    margin: 0;
+    color: vars.$light;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: vars.$no;
+}
+
+li {
+    font-size: 0;
+}
+
+button {
+    padding: 0;
+    background: transparent;
+    border-style: vars.$no;
+    cursor: vars.$point;
+}
+
+blockquote {
+    margin: 0;
+    padding: 0;
+    border: vars.$no;
+}
+
+audio {
+    appearance: vars.$no;
+    width: 100%;
+}
+
+.container {
+    max-width: 100%;
+}
+
+header {
+    margin: 0 auto;
+}
