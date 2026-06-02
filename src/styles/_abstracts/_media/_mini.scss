@@ -1,0 +1,470 @@
+@use '../vars';
+@use '../mixins';
+
+@media (max-width: 768px) {
+    body {
+        max-width: 768px;
+        background-image: url("../img/media/768-back.webp");
+    }
+
+    .main {
+        padding: 0 4rem;
+    }
+
+    .intro {
+        &__audio {
+            font-family: vars.$font;
+            font-weight: 600;
+            font-size: 70px;
+            line-height: vars.$full;
+            color: vars.$light;
+        }
+    }
+
+    .control {
+        &__timeline {
+            margin-right: 15px;
+            width: 380px;
+        }
+    }
+
+    .player {
+        &__timeline {
+            margin-right: 15px;
+        }
+    }
+
+    .news__list {
+        &__list {
+            flex-direction: column;
+            align-items: vars.$ctr;
+
+            &__item {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .info {
+        &__list {
+            max-width: vars.$half;
+        }
+    }
+
+    #01 {
+        display: vars.$no;
+    }
+
+    #05 {
+        grid-column: auto;
+    }
+
+    .gallery {
+        &__list {
+            grid-template-columns: repeat(2, 255px);
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .player {
+        &__container {
+            padding-left: 0;
+        }
+    }
+
+    .control {
+        &__timeline {
+            width: 300px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        max-width: 600px;
+    }
+
+    .main {
+        padding: 0 2rem;
+    }
+
+    .control {
+        &__timeline {
+            width: 290px;
+        }
+    }
+
+    .info {
+        &__box {
+            &::after {
+                right: 20px;
+            }
+        }
+    }
+
+    .media {
+        padding: 20px 50px;
+    }
+
+    .last-track {
+        &__play {
+           margin-right: 5px; 
+        }
+    }
+
+
+    .player {
+        &__pause {
+            margin-right: 5px;
+        }
+    }
+
+    .gallery {
+        &__list {
+            grid-template-columns: repeat(1, 255px);
+        }
+    }
+
+    #05 {
+        width: 255px;
+    }
+
+    .slick-next {
+        right: 25px;
+    }
+
+    .slick-prev {
+        left: 25px;
+    }
+
+    .slider {
+        &__card {
+            &__pic {
+                &__img {
+                    width: 249px;
+                    height: 199px;
+                }
+            }
+        }
+    }
+
+    .footer {
+        &__list {
+            justify-content: space-between;
+        }
+
+        &__table {
+           display: vars.$no; 
+        }
+
+        &__media {
+            display: vars.$flx;
+            flex-wrap: wrap;
+            justify-content: vars.$ctr;
+            width: vars.$full;
+            min-height: 50px;
+            text-align: vars.$ctr;
+
+            &__item {
+                font-size: 18px;
+                line-height: 27px;
+                color: vars.$light;
+                text-transform: uppercase;
+                font-weight: vars.$weight;
+
+                &:nth-child(-n+2) {
+                    cursor: default;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 0 auto;
+        max-width: 480px;
+        background-image: url("../img/media/480-back.webp");
+    }
+
+    .main {
+        padding: 0 15px;
+    }
+
+    .header {
+        padding-left: 15px;
+    }
+
+    .header {
+        &__logo {
+            order: 2;
+            margin-left: 0;
+            align-self: cars.$ctr;
+        }
+    }
+
+    .nav {
+        margin-right: 20px;
+
+        &__list {
+            &__item {
+                &__link {
+                    font-weight: vars.$weight;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .intro {
+        &__title {
+            @include mixins.mini();
+        }
+
+        &__audio {
+            font-size: 50px;
+            line-height: vars.$full;
+        }
+    }
+
+    .control {
+        &__current-time,
+        &__dash,
+        &__duration-time {
+            @include mixins.mini-timeline();
+        }
+        &__timeline {
+            margin-right: 20px;
+
+            #{&}::-webkit-slider-thumb {
+                @include mixins.mini-width;
+            }
+
+            #{&}::-moz-range-thumb {
+                @include mixins.mini-width;
+            }
+        }
+         &__play {
+            @include mixins.mini-btn-play();
+            background-image: url("../img/media/480-pause-button.svg");
+        }
+
+        &__pause {
+            @include mixins.mini-btn-play();
+            background-image: url("../img/media/play-button-480.svg");
+        }
+    }
+
+    .player {
+        &__title {
+            @include mixins.mini();
+            background-position: bottom 4px left;
+        }
+        &__current, 
+        &__dash,
+        &__duration {
+            @include mixins.mini-timeline();
+        }
+        &__timeline {
+            margin-right: 20px;
+            width: 200px;
+            #{&}::-webkit-slider-thumb {
+                @include mixins.mini-width;
+            }
+
+            #{&}::-moz-range-thumb {
+                @include mixins.mini-width;
+            }
+        }
+        &__pause {
+            @include mixins.mini-btn-play();
+            background-image: url("../img/media/play-button-480.svg");
+        }
+    }
+
+    .last-track {
+        &__play {
+            @include mixins.mini-btn-play();
+            background-image: url("../img/media/480-pause-button.svg");
+        }
+    }
+
+    .news {
+        &__box {
+            width: 250px;
+            min-height: 50px;
+        }
+        &__item {
+            min-height: 214px;
+            width: 250px;
+
+            &:first-child {
+                background-image: url("../img/media/480-first.webp");
+            }
+
+            &:nth-child(2) {
+                background-image: url("../img/media/480-second.webp");
+            }
+
+            &:last-child {
+                background-image: url("../img/media/480-third.webp");
+            }
+        }
+
+        &__descr {
+            margin-bottom: 0;
+            padding: 10px;
+            width: vars.$full;
+            font-weight: vars.$weight;
+        }
+    }
+
+    .info {
+        &__box {
+            margin-bottom: 50px;
+            max-width: vars.$full;
+            width: vars.$full;
+            background-position: bottom 4px left;
+
+            &__title {
+                @include mixins.mini();
+            }
+
+            &__descr {
+                max-width: vars.$full;
+                width: vars.$full;
+            }
+        }
+        &__list {
+            &__item {
+                font-weight: vars.$weight;
+            }
+        }
+    }
+
+    .follow {
+        &__title {
+            font-size: 15px;
+            font-weight: vars.$weight;
+            line-height: vars.$full;
+        }
+
+        &__list {
+            &__item {
+                background-size: 18px 18px;
+                background-position: bottom 5px left 15px;
+
+                &__link {
+                    font-weight: vars.$weight;
+                    line-height: vars.$full;
+                }
+            }
+        }
+    }
+
+    .news,
+    .media,
+    .gallery,
+    .slider {
+        margin-bottom: 100px;
+    }
+
+    .last-track {
+        margin-bottom: 170px;
+    }
+
+    .media {
+        padding: 15px 15px;
+    }
+
+    .footer {
+        &__list {
+            margin-bottom: 50px;
+
+            &__item {
+                &:first-child &__link {
+                    background-image: url("../img/media/apple-480.svg");
+                }
+
+                &:nth-child(2) &__link {
+                    background-image: url("../img/media/spoty-480.svg");
+                }
+
+                &:nth-child(3) &__link {
+                    background-image: url("../img/media/insta-480.svg");
+                }
+
+                &:nth-child(4) &__link {
+                    background-image: url("../img/media/youtube-480.svg");
+                }
+
+                &:nth-child(5) &__link {
+                    background-image: url("../img/media/twitter-480.svg");
+                }
+
+                &:last-child &__link {
+                    background-image: url("../img/media/fb-480.svg");
+                }
+
+                &__link {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 440px) {
+
+    .control {
+        &__timeline {
+            width: 140px;
+        }
+    }
+    .player {
+        &__timeline {
+            width: 140px;
+        }
+    }
+
+    .slick-arrow {
+        width: 20px;
+        height: 30px;
+    }
+
+    .slick-next {
+        background-image: url("../img/media/480-arrow-next.svg");
+        right: 0;
+    }
+
+    .slick-prev {
+        background-image: url("../img/media/480-arrow-prev.svg");
+        left: 0;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        max-width: 320px;
+    }
+
+    .control {
+        &__timeline {
+            width: 70px;
+        }
+    }
+    .player {
+        &__timeline {
+            width: 70px;
+        }
+    }
+
+    .footer__list {
+        &__list {
+            display: grid;
+            grid-template-columns: repeat(2, 60px);
+        }
+    }
+}

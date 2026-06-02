@@ -1,0 +1,167 @@
+@use '../vars';
+
+@media (max-width: 1024px) {
+    body {
+        max-width: 1024px;
+        background-image: url("../img/media/1024-back.webp");
+    }
+
+    .main {
+        padding-top: 0;
+    }
+
+    .control {
+        &__timeline {
+            width: 600px;
+        }
+    }
+
+    .news {
+        &__box {
+            max-width: 350px;
+        }
+
+        &__list {
+            justify-content: vars.$ctr;
+            flex-wrap: wrap;
+
+            &__item {
+                margin-bottom: 30px;
+
+                &:last-child {
+                    margin-right: 30px;
+                }
+            }
+        }
+    }
+
+    .media {
+        max-width: vars.$full;
+    }
+
+    .info {
+        .container {
+            &::after {
+                right: 50px;
+            } 
+        }
+    }
+
+    .playlist {
+        &__title,
+        &__item {
+           user-select: vars.$no; 
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    body {
+        max-width: 992px;
+    }
+
+    .header {
+        margin-bottom: 50px;
+        padding-left: 3rem;
+        width: var.$full;
+    }
+
+    .header__logo {
+        margin-left: auto;
+        order: 1;
+        align-self: flex-start;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 20%;
+    }
+
+    .control {
+        &__timeline {
+            width: 500px;
+        }
+    }
+
+    .info {
+        .info {
+            &::before {
+                display: vars.$no;
+            }
+        }
+
+        .container {
+            &::after {
+                display: vars.$no;
+            }
+        }
+    }
+
+    .media__descr {
+        &__descr {
+            max-width: vars.$full;
+        }
+    }
+
+    .picture {
+        &__last-track {
+            display: vars.$no;
+        }
+    }
+
+    .player__container {
+        &__container {
+            padding-left: 0;
+            width: vars.$full;
+        }
+    } 
+}
+
+@media (max-width: 900px) {
+    body {
+        max-width: 900px;
+    }
+
+    .footer {
+        max-width: vars.$full;
+    }
+
+    .nav {
+        &__list {
+            width: 70%;
+
+            &__item {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .last-track {
+        &__logo {
+            display: vars.$no;
+        }
+    }
+}
+
+@media (max-width: 845px) {
+    .control {
+        &__play,
+        &__pause {
+            margin-right: 10px;
+        }
+    }
+
+    .control {
+        &__timeline {
+            margin-right: 30px;
+            width: 450px;
+        }
+    }
+
+    .player {
+        &__timeline {
+            margin-right: 30px;
+        }
+    }
+}

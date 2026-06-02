@@ -121,3 +121,25 @@
     color: vars.$light;
     text-transform: uppercase;
 }
+
+@mixin mini {
+    font-size: 30px;
+    line-height: vars.$full;
+}
+
+@mixin mini-timeline {
+    font-weight: vars.$weight;
+    font-size: 14px;
+    line-height: vars.$full;
+}
+
+@mixin mini-width {
+    width: 1px;
+    height: 10px;
+}
+
+@mixin mini-btn-play {
+    margin-right: 15px;
+    width: 45px;
+    background-position: left 0 center;
+}

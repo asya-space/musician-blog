@@ -83,20 +83,28 @@
     }
 }
 
-.info .info__box::before {
-    top: 50px;
-    right: 95px;
-    background-image: url("../img/front-news.webp");
-    z-index: 10;
-    @include mixins.before-after();
+.info .info {
+    &__box {
+        &::before {
+            top: 50px;
+            right: 95px;
+            background-image: url("../img/front-news.webp");
+            z-index: 10;
+            @include mixins.before-after();
+        }
+    }
 }
 
-.info .info__box::after {
-    top: 110px;
-    right: 0;
-    background-image: url("../img/back-news.png");
-    z-index: 5;
-    @include mixins.before-after();
+.info .info {
+    &__box {
+        &::after {
+            top: 110px;
+            right: 0;
+            background-image: url("../img/back-news.png");
+            z-index: 5;
+            @include mixins.before-after();
+        }
+    }
 }
 
 .media {

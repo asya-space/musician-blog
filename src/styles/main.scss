@@ -12,6 +12,9 @@
 @use './_layout/gallery';
 @use './_components/slider';
 @use './_layout/footer';
+@use './_abstracts/_media/screen';
+@use './_abstracts/_media/tablet';
+@use './_abstracts/_media/mini';
 
 .header {
     display: vars.$flx;
@@ -30,10 +33,4 @@
     margin: 0 auto;
     max-width: 1270px;
     padding: 161px 50px 0 50px;
-}
-
-@media (max-width: 1536px) {
-  body {
-    max-width: 1536px;
-  }
 }
