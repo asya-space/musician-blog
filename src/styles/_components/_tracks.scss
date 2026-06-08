@@ -72,13 +72,9 @@
 }
 
 .player {
-    --seek-before-width: 0%;
-    --buffered-width: 0%;
-    position: relative;
+    @include mixins.seek-buffered();
     margin-bottom: 50px;
     width: 540px;
-    height: 50px;
-    cursor: vars.$point;
 
     &__panel {
         @include mixins.panel();

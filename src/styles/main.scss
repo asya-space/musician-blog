@@ -35,8 +35,8 @@
     padding: 161px 50px 0 50px;
 }
 
-/* .media-screen {
-        &__email {
+.screen {
+    &__email {
         &:focus,
         &:active {
             @include mixins.link();
@@ -46,4 +46,4 @@
             @include mixins.hover();
         }
     }
-} */
+}

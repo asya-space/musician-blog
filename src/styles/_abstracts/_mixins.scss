@@ -148,3 +148,11 @@
     padding-left: 60px;
     width: 60%;
 }
+
+@mixin seek-buffered {
+    --seek-before-width: 0%;
+    --buffered-width: 0%;
+    position: relative;
+    height: 50px;
+    cursor: vars.$point;
+}

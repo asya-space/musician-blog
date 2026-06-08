@@ -64,10 +64,6 @@
         border-radius: 50%;
     }
 
-    &__media {
-        display: vars.$no;
-    }
-
     &__copyright {
         font-weight: vars.$weight;
         font-size: 13px;
@@ -104,4 +100,8 @@
         font-weight: 400;
         text-align: left;
     }
+}
+
+.screen {
+    display: vars.$no;
 }

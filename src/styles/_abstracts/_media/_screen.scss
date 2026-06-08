@@ -13,7 +13,7 @@
 
     .main,
     .container {
-        max-width: 100%;
+        max-width: vars.$full;
     }
 
     .slick-prev {
@@ -30,7 +30,7 @@
         max-width: 1280px;
     }
 
-    .playlist {
+    .tracks__list {
         max-width: 90%;
     }
 
@@ -49,46 +49,32 @@
         max-width: 1200px;
     }
 
-    .control {
-        &__timeline {
-            width: 750px;
-        }
+    #playon {
+        width: 750px;
     }
 
-    .player {
-        &__timeline {
-            width: 300px;
-        }
+    #panel {
+        width: 300px;
     }
 
     .info {
-        &__box {
-            &__descr {
-                max-width: vars.$half;
-                width: vars.$half;
-            }
+        &__descr {
+            max-width: vars.$half;
+            width: vars.$half;
         }
-    }
-    
-    .info .info {
-        &__box {
-            &::before {
-                right: 100px;
-            }
-        }
-    }
 
-    .info .info {
-        &__box {
-            &::after {
-                right: 20px;
-            }
+        &::before {
+            right: 100px;
+        }
+
+        &::after {
+            right: 20px;
         }
     }
 
     .media {
-        &__descr {
-            max-width: 50%;
+        &__subscription {
+            max-width: vars.$half;
         }
     }
 
@@ -103,54 +89,48 @@
         }
     }
 
-    .slider {
-        &__card {
-            width: 250px;
-            height: 350px;
+    .card {
+        width: 250px;
+        height: 350px;
+        background-color: transparent;
+        border-right: vars.$board;
+        border-bottom: vars.$board;
+
+        &__img {
+            width: 248px;
+            height: 198px;
+        }
+
+        &__sub {
+            margin-bottom: 10px;
+            font-weight: vars.$weight;
+            line-height: vars.$full;
+        }
+
+        &__time {
+            font-weight: vars.$weight;
+            text-transform: vars.$no;
+        }
+
+        &__title {
+            margin-bottom: 10px;
+            font-weight: 500;
+            line-height: vars.$full;
+        }
+
+        &__link {
+            right: 15px;
+            bottom: 10px;
+            padding: 5px;
+            width: fit-content;
+            min-height: 10px;
+            font-weight: vars.$weight;
+            font-size: 16px;
+            line-height: vars.$full;
+            text-transform: lowercase;
             background-color: transparent;
-            border-right: vars.$board;
-            border-bottom: vars.$board;
-
-            &__pic {
-                &__img {
-                    width: 248px;
-                    height: 198px;
-                }
-            }
-
-            &__content {
-                &__sub {
-                    margin-bottom: 10px;
-                    font-weight: vars.$weight;
-                    line-height: vars.$full;
-                }
-
-                &__time {
-                    font-weight: vars.$weight;
-                    text-transform: vars.$no;
-                }
-
-                &__title {
-                    margin-bottom: 10px;
-                    font-weight: 500;
-                    line-height: vars.$full;
-                }
-
-                &__link {
-                    right: 15px;
-                    bottom: 10px;
-                    padding: 5px;
-                    width: fit-content;
-                    min-height: 10px;
-                    font-weight: vars.$weight;
-                    font-size: 16px;
-                    line-height: vars.$full;
-                    text-transform: lowercase;
-                    background-color: transparent;
-                    border-radius: 15px 0px;
-                    color: vars.$violet;
-                }
-            }
+            border-radius: 15px 0px;
+            color: vars.$violet;
         }
     }
 
@@ -163,8 +143,9 @@
     }
 }
 
+
 @media (max-width: 1074px) {
-  .control__timeline {
-    width: 700px;
-  }
+    #playon {
+        width: 700px;
+    }
 }

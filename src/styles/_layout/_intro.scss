@@ -1,4 +1,5 @@
 @use '../_abstracts/vars';
+@use '../_abstracts/mixins';
 
 .intro {
     margin-bottom: 130px;
@@ -11,7 +12,7 @@
         line-height: 72px;
     }
 
-    &__audio {
+    &__song {
         margin-bottom: 60px;
         font-family: vars.$font;
         font-weight: 700;
@@ -21,5 +22,10 @@
         -webkit-text-fill-color: transparent;
         -webkit-text-stroke-width: 0.1px;
         -webkit-text-stroke-color: vars.$light;
+    }
+
+    &__playon {
+        @include mixins.seek-buffered();
+        width: vars.$full;
     }
 }
