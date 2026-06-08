@@ -2,52 +2,18 @@
 @use '../_abstracts/mixins';
 
 .footer {
-    display: vars.$flx;
-    flex-direction: column;
-    flex-shrink: 0;
-    align-items: vars.$ctr;
-    margin: 0 auto;
-    padding-bottom: 40px;
-    max-width: 100%;
-
-    &__logo {
-        &__img {
-            margin-bottom: 60px;
-        }
+    .container {
+        display: vars.$flx;
+        flex-direction: column;
+        flex-shrink: 0;
+        align-items: vars.$ctr;
+        margin: 0 auto;
+        padding-bottom: 40px;
+        max-width: vars.$full;
     }
 
-    &__table {
-        &__data {
-            margin-bottom: 60px;
-            max-width: 540px;
-            border-spacing: 30px 1px;
-            cursor: default;
-            @include mixins.contacts();
-
-            &__col {
-                &__manager,
-                &__address {
-                    font-size: 18px;
-                    line-height: 27px;
-                    color: vars.$light;
-                    text-transform: uppercase;
-                }
-
-                &__manager {
-                    font-weight: 600;
-                    line-height: 27px;
-                    text-align: right;
-                }
-
-                &__address {
-                    padding-left: 30px;
-                    font-weight: 400;
-                    text-align: left;
-                }
-            }
-        }
-
-
+    &__img {
+        margin-bottom: 60px;
     }
 
     &__list {
@@ -56,46 +22,46 @@
         justify-content: vars.$ctr;
         flex-wrap: wrap;
         min-height: 60px;
+    }
 
-        &__item {
-            &:not(:last-child) {
-                margin-right: 30px;
-            }
-
-            &:first-child &__link {
-                background-image: url("../img/apple-link.svg");
-            }
-
-            &:nth-child(2) &__link {
-                background-image: url("../img/spoty-link.svg");
-            }
-
-            &:nth-child(3) &__link {
-                background-image: url("../img/insta-link.svg");
-            }
-
-            &:nth-child(4) &__link {
-                background-image: url("../img/youtube-link.svg");
-            }
-
-            &:nth-child(5) &__link {
-                background-image: url("../img/twitter-link.svg");
-            }
-
-            &:last-child &__link {
-                background-image: url("../img/fb-link.svg");
-            }
-
-            &__link {
-                display: block;
-                margin-bottom: 20px;
-                width: 60px;
-                height: 60px;
-                background-repeat: vars.$norp;
-                background-color: #2C2C2C;
-                border-radius: 50%;
-            }
+    &__item {
+        &:not(:last-child) {
+            margin-right: 30px;
         }
+
+        &:first-child &__link {
+            background-image: url("../img/apple-link.svg");
+        }
+
+        &:nth-child(2) &__link {
+            background-image: url("../img/spoty-link.svg");
+        }
+
+        &:nth-child(3) &__link {
+            background-image: url("../img/insta-link.svg");
+        }
+
+        &:nth-child(4) &__link {
+            background-image: url("../img/youtube-link.svg");
+        }
+
+        &:nth-child(5) &__link {
+            background-image: url("../img/twitter-link.svg");
+        }
+
+        &:last-child &__link {
+            background-image: url("../img/fb-link.svg");
+        }
+    }
+
+    &__link {
+        display: block;
+        margin-bottom: 20px;
+        width: 60px;
+        height: 60px;
+        background-repeat: vars.$norp;
+        background-color: #2C2C2C;
+        border-radius: 50%;
     }
 
     &__media {
@@ -103,11 +69,39 @@
     }
 
     &__copyright {
-        font-weight: 400;
+        font-weight: vars.$weight;
         font-size: 13px;
         line-height: 19px;
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.5);
         cursor: default;
+    }
+}
+
+.data {
+    margin-bottom: 60px;
+    max-width: 540px;
+    border-spacing: 30px 1px;
+    cursor: default;
+    @include mixins.contacts();
+
+    &__manager,
+    &__address {
+        font-size: 18px;
+        line-height: 27px;
+        color: vars.$light;
+        text-transform: uppercase;
+    }
+
+    &__manager {
+        font-weight: 600;
+        line-height: 27px;
+        text-align: right;
+    }
+
+    &__address {
+        padding-left: 30px;
+        font-weight: 400;
+        text-align: left;
     }
 }

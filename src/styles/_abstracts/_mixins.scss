@@ -143,3 +143,8 @@
     width: 45px;
     background-position: left 0 center;
 }
+
+@mixin panel {
+    padding-left: 60px;
+    width: 60%;
+}

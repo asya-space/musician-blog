@@ -55,6 +55,22 @@ li {
     font-size: 0;
 }
 
+ol li {
+    display: vars.$flx;
+    align-items: vars.$ctr;
+    counter-increment: digits;
+    content: "0" counter(digits);
+}
+
+ol li:before {
+  content: "0" counter(digits);
+}
+
+ol {
+  list-style: none;
+  counter-reset: digits;
+}
+
 button {
     padding: 0;
     background: transparent;

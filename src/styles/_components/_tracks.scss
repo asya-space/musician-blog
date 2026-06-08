@@ -1,0 +1,92 @@
+@use '../_abstracts/vars';
+@use '../_abstracts/mixins';
+
+.tracks {
+    margin-bottom: 210px;
+    max-width: vars.$full;
+
+    .container {
+        display: vars.$flx;
+        justify-content: space-between;
+    }
+
+    &__list {
+        margin-bottom: 50px;
+        padding-left: 0;
+        max-width: vars.$full;
+        min-height: 200px;
+    }
+
+    &__item {
+        &::before {
+            margin-right: 20px;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 21px;
+            color: rgba(255, 255, 255, 0.5);
+            user-select: vars.$no; 
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__title {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        color: vars.$light;
+        text-decoration: vars.$no;
+        cursor: vars.$point;
+        transition: color .3s ease-in-out;
+
+        &:active {
+            @include mixins.active();
+        }
+    }
+
+    .active {
+        @include mixins.active();
+    }
+}
+
+.label {
+    width: 40%;
+}
+
+.playlist {
+    padding-left: 60px;
+    width: 60%;
+
+    &__title {
+        margin-bottom: 62px;
+        padding-left: 94px;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 72px;
+        background-image: url("../img/list-icon.svg");
+        background-repeat: no-repeat;
+        background-position: left;
+    }
+}
+
+.player {
+    --seek-before-width: 0%;
+    --buffered-width: 0%;
+    position: relative;
+    margin-bottom: 50px;
+    width: 540px;
+    height: 50px;
+    cursor: vars.$point;
+
+    &__panel {
+        @include mixins.panel();
+    }
+
+    .controller {
+        &__timeline {
+            width: 317px;
+        }
+    }
+}

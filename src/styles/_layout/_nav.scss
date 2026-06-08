@@ -4,26 +4,26 @@
     &__list {
         display: vars.$flx;
         flex-wrap: wrap;
+    }
 
-        &__item {
-            min-height: 27px;
+    &__item {
+        min-height: 27px;
             &:not(:last-child) {
                 margin-right: 56px;
             }
+    }
 
-            &__link,
-            &__link:active {
-                font-weight: 600;
-                font-size: 18px;
-                line-height: 27px;
-                color: vars.$light;
-            }
+    &__link,
+    &__link:active {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        color: vars.$light;
+    }
 
-            &__link:hover {
-                text-decoration: vars.$no;
-                color: vars.$light;
-                opacity: 0.7;
-            }
-        }
+    &__link:hover {
+        text-decoration: vars.$no;
+        color: vars.$light;
+        opacity: 0.7;
     }
 }

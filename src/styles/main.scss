@@ -7,14 +7,14 @@
 @use './_components/audio';
 @use './_layout/news';
 @use './_layout/info';
-@use './_components/playlist';
+@use './_components/tracks';
 @use './_layout/follow';
 @use './_layout/gallery';
 @use './_components/slider';
 @use './_layout/footer';
 @use './_abstracts/_media/screen';
 @use './_abstracts/_media/tablet';
-@use './_abstracts/_media/mini';
+@use './_abstracts/_media/mini';   
 
 .header {
     display: vars.$flx;
@@ -34,3 +34,16 @@
     max-width: 1270px;
     padding: 161px 50px 0 50px;
 }
+
+/* .media-screen {
+        &__email {
+        &:focus,
+        &:active {
+            @include mixins.link();
+        }
+
+        &:hover {
+            @include mixins.hover();
+        }
+    }
+} */

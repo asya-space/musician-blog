@@ -16,36 +16,36 @@
         display: vars.$flx;
         flex-wrap: wrap;
         align-items: vars.$ctr;
+    }
 
-        &__item {
-            padding-left: 40px;
-            min-height: 20px;
-            background-repeat: vars.$norp;
-            background-size: 30px 30px;
-            background-position: left bottom -5px;
-            cursor: vars.$point;
+    &__item {
+        padding-left: 40px;
+        min-height: 20px;
+        background-repeat: vars.$norp;
+        background-size: 30px 30px;
+        background-position: left bottom -5px;
+        cursor: vars.$point;
 
-            &:first-child {
-                margin-right: 30px;
-                background-image: url("../img/spoty-icon.svg");
-            }
+        &:first-child {
+            margin-right: 30px;
+            background-image: url("../img/spoty-icon.svg");
+        }
 
-            &:last-child {
-                background-image: url("../img/apple-icon.svg");
-            }
+        &:last-child {
+            background-image: url("../img/apple-icon.svg");
+        }
+    }
 
-            &__link {
-                @include mixins.follow();
-                &:focus,
-                &:active {
-                    @include mixins.follow();
-                }
+    &__link {
+        @include mixins.follow();
+        &:focus,
+        &:active {
+            @include mixins.follow();
+        }
 
-                &:hover {
-                    text-decoration: vars.$no;
-                    color: rgba(255, 255, 255, 0.7);
-                }
-            }
+        &:hover {
+            text-decoration: vars.$no;
+            color: rgba(255, 255, 255, 0.7);
         }
     }
 }
