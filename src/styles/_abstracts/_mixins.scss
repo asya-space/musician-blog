@@ -4,13 +4,13 @@
     margin-right: 45px;
     width: 35px;
     height: 25px;
-    background-image: url("../img/pause-button.svg");
-    background-repeat: vars.$norep;
+    background-image: url("../../../icons/pause-button.svg");
+    background-repeat: vars.$norp;
     cursor: vars.$point;
 }
 
 @mixin img {
-    background-image: url("../img/play-button.svg");
+    background-image: url("../../../icons/play-button.svg");
 }
 
 @mixin timeline {
@@ -19,19 +19,20 @@
     margin-right: 47px;
     padding: 0;
     width: 887px;
-    height: 50px;
+    height: 25px;
     background-color: transparent;
-    background-image: url("../img/seek-time.svg");
-    background-image: url("../img/seek-time-violet.svg");
-    background-size: 0% 100%;
-    background-repeat: vars.$norep;
-    z-index: 100;
-    cursor: vars.$point;
-}
-
-@mixin range {
-    width: 887px;
-    height: 3px;
+    background-image: 
+        url('../../../icons/seek-time.svg'), 
+        url('../../../icons/seek-time-violet.svg');
+    background-size: 
+        100 100%,
+        0% 0%;
+    background-position:
+        left center,
+        left center;
+    background-repeat: 
+        vars.$norp,
+        vars.$norp;
     cursor: vars.$point;
 }
 
@@ -41,7 +42,12 @@
     width: 2px;
     height: 20px;
     background-color: vars.$violet;
-    transform: translateY(-40%);
+    cursor: vars.$point;
+}
+
+@mixin range {
+    width: 887px;
+    height: 3px;
     cursor: vars.$point;
 }
 

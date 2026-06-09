@@ -2,9 +2,10 @@
 @use '../_abstracts/mixins';
 
 .controller {
+    display: vars.$flx;
     flex-direction: row;
     align-items: vars.$ctr;
-    margin-top: 10px;
+    align-self: vars.$ctr;
     width: 100%;
 
     &__play,
@@ -14,34 +15,6 @@
 
     &__pause {
         @include mixins.img();
-    }
-
-    &__timeline {
-        @include mixins.timeline();
-
-        #{&}::-webkit-slider-thumb,
-        #{&}::-moz-range-thumb {
-            @include mixins.sliderThumb();
-        }
-
-        #{&}::-moz-range-thumb {
-            transition: all .5s;
-        }
-
-        #{&}::-webkit-slider-runnable-track {
-            @include mixin.runnable();
-        }
-
-        #{&}::-moz-range-track,
-        #{&}::-ms-track {
-            @include mixins.rangeTrack();
-        }
-    }
-
-    &__timeline[type="range"] {
-        #{&}::-webkit-slider-runnable-track {
-            @include mixins.range();
-        }
     }
 
     &__current,

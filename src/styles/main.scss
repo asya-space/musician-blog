@@ -10,7 +10,7 @@
 @use './_components/tracks';
 @use './_layout/follow';
 @use './_layout/gallery';
-@use './_components/slider';
+@use './_components/embla';
 @use './_layout/footer';
 @use './_media/screen';
 @use './_media/tablet';
@@ -21,7 +21,12 @@
     padding-top: 42px;
     margin-bottom: 161px;
     max-width: 100%;
-    align-items: vars.$ctr;
+    
+    .container {
+        display: vars.$flx;
+        align-items: vars.$ctr;
+        margin: 0 auto;
+    }
 
     &__logo {
         align-items: flex-end;
@@ -33,6 +38,37 @@
     margin: 0 auto;
     max-width: 1270px;
     padding: 161px 50px 0 50px;
+}
+
+/* use input[type="range"] only, it's important for styling and design */
+#playon {
+    margin-top: 8px;
+}
+
+input[type="range"] {
+    @include mixins.timeline();
+}
+
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb {
+    @include mixins.sliderThumb();
+}
+
+input[type="range"]::-moz-range-thumb {
+    transition: all .5s;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    @include mixins.runnable();
+}
+
+input[type="range"]::-moz-range-track,
+input[type="range"]::-ms-track {
+    @include mixins.rangeTrack();
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    @include mixins.range();
 }
 
 .screen {

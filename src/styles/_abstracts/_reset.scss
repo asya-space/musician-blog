@@ -16,9 +16,9 @@ body {
     max-width: 1920px;
     font-family: vars.$pop;
     background-image: url("../../../images/musician-back.webp");
-    background-repeat: vars.$norep;
+    background-repeat: vars.$norp;
     background-position: top center;
-    background-color: var(--dark);
+    background-color: vars.$dark;
     overflow-x: hidden;
 }
 
@@ -91,8 +91,4 @@ audio {
 
 .container {
     max-width: 100%;
-}
-
-header {
-    margin: 0 auto;
 }

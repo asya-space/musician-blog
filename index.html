@@ -4,27 +4,28 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" type="text/css" href="css/slick.min.css" defer>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
         <title>Bright Lights</title>
         <link rel="icon" type="image/x-icon" href="/favicon.svg">
     </head>
     <body>
         <header class="header">
-            <picture class="logo">
-                <source data-srcset="/icons/logo-group.svg">
-                <img class="logo__img" src="/icons/logo-group.svg" width="223" height="60" alt="bright-logo">
-            </picture>
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a class="nav__link" href="#info">About</a></li>
-                    <li class="nav__item"><a class="nav__link" href="#news">News</a></li>
-                    <li class="nav__item"><a class="nav__link" href="#playlist">Music</a></li>
-                    <li class="nav__item"><a class="nav__link" href="#media">Media</a></li>
-                    <li class="nav__item"><a class="nav__link" href="#tours">Tours</a></li>
-                    <li class="nav__item"><a class="nav__link" href="#contacts">Contacts</a></li>
-                </ul>
-            </nav>
+            <div class="container">
+                <picture class="header__logo">
+                    <source data-srcset="/icons/logo-group.svg">
+                    <img class="logo__img" src="/icons/logo-group.svg" width="223" height="60" alt="bright-logo">
+                </picture>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a class="nav__link" href="#info">About</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#news">News</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#playlist">Music</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#media">Media</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#tours">Tours</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#contacts">Contacts</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
 
         <main class="main">
@@ -38,11 +39,10 @@
                         </audio>
                         <div class="controller">
                             <div class="controller__play controller__pause" id="play-pause"></div>
-                                <label for="controller"><input id="playon" type="range" class="controller__timeline" max="100" value="0" aria-label="player's timeline"></label>
-                                <span class="controller__current time">0:00</span>
-                                <span class="controller__dash">-</span>
-                                <span class="controller__duration time">0:00</span>
-                            </div>
+                            <label for="controller"><input id="playon" type="range" class="controller__timeline" max="100" value="0" aria-label="player's timeline"></label>
+                            <span class="controller__current time">0:00</span>
+                            <span class="controller__dash">-</span>
+                            <span class="controller__duration time">0:00</span>
                         </div>
                     </div>
             </section>
@@ -155,7 +155,7 @@
                             </li>
 
                             <li class="tracks__item">
-                                <p class="tracks__title">Zeds Dead, Dirtyphonics, Bright Lights — Where Are You Now</>
+                                <p class="tracks__title">Zeds Dead, Dirtyphonics, Bright Lights — Where Are You Now</p>
                                 <audio class="tracks__song" preload="metadata">
                                     <source src="./src/assets/audio/1685015234663_track.ogg" type="audio/ogg">
                                 </audio>
@@ -186,19 +186,19 @@
             <section id="tours" class="gallery">
                 <div class="container">
                     <ul class="gallery__list">
-                        <li class="gallery__item" id="01">
+                        <li class="gallery__item" id="one">
                             <img class="gallery__img" src="/images/tour-one.webp" style="max-width: 255px; max-height: 500px;" alt="photo">
                         </li>
-                        <li class="gallery__item" id="02">
+                        <li class="gallery__item" id="two">
                             <img class="gallery__img" src="/images/tour-two.webp" style="max-width: 255px; max-height: 235px;" width="255" height="235" alt="photo">
                         </li>
-                        <li class="gallery__item" id="03">
+                        <li class="gallery__item" id="three">
                             <img class="gallery__img" src="/images/tour-three.webp" style="max-width: 255px; max-height: 235px;" width="255" height="235" alt="photo">
                         </li>
-                        <li class="gallery__item" id="04">
+                        <li class="gallery__item" id="four">
                             <img class="gallery__img" src="/images/tour-four.webp" style="max-width: 255px; max-height: 500px;" alt="photo">
                         </li>
-                        <li class="gallery__item" id="05">
+                        <li class="gallery__item" id="five">
                             <h2>
                                 <a class="gallery__link" href="#" target="_blank">EDC Las Vegas Mainstage</a>
                             </h2>
@@ -209,119 +209,70 @@
       
             <section class="slider">
                 <div class="container">
-                    <div class="slider__item active">
-                        <div class="card">
-                            <div class="card__pic">
-                                <img class="card__img" 
-                                    srcset="/optimize/845-less-tour-pic-one.webp 248w,
-                                    /optimize/600-less-tour-pic-one.webp 249w"
-                                    sizes="(max-width: 1024px) 248px,
-                                    (max-width: 1200px) 249px" 
-                                    src="/images/tour-pic-one.webp" alt="chandler-az">
-                            </div>
-                            <div class="card__content">
-                                <h3 class="card__title">Chandler, AZ</h3>
-                                <p class="card__sub">The Park at Wild Horse Pass</p>
-                                <time datetime="2021-04-02" class="card__time">Apr 02 2021</time>
-                                <a class="card__link" href="#" target="_blank">Tickets</a>
+                    <div class="embla">
+                        <div class="embla__arrow embla__prev"></div>
+                        <div class="embla__arrow embla__next"></div>
+                        <div class="embla__viewport">
+                            <div class="embla__container">
+                                <div class="embla__slide">
+                                    <div class="card">
+                                        <div class="card__pic">
+                                            <img class="card__img" 
+                                                srcset="/optimize/845-less-tour-pic-one.webp 248w,
+                                                /optimize/600-less-tour-pic-one.webp 249w"
+                                                sizes="(max-width: 1024px) 248px,
+                                                (max-width: 1200px) 249px" 
+                                                src="/images/tour-pic-one.webp" alt="chandler-az">
+                                        </div>
+                                        <div class="card__content">
+                                            <h3 class="card__title">Chandler, AZ</h3>
+                                            <p class="card__sub">The Park at Wild Horse Pass</p>
+                                            <time datetime="2021-04-02" class="card__time">Apr 02 2021</time>
+                                            <a class="card__link" href="#" target="_blank">Tickets</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="embla__slide">
+                                    <div class="card">
+                                        <div class="card__pic">
+                                            <img class="card__img" 
+                                                srcset="/optimize/845-less-tour-pic-three.webp 248w,
+                                                /optimize/600-less-tour-pic-three.webp 249w"
+                                                sizes="(max-width: 845px) 248px,
+                                                (max-width: 1200px) 249px"
+                                                src="/images/tour-pic-three.webp" alt="el-swing-ibz">
+                                        </div>
+                                        <div class="card__content">
+                                            <h4 class="card__title">Ibiza, IBZ</h4>
+                                            <p class="card__sub">Swag Ibiza Club</p>
+                                            <time datetime="2021-08-07" class="card__time">Jul 08 2021</time>
+                                            <a class="card__link" href="#" target="_blank">Tickets</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="embla__slide">
+                                    <div class="card">
+                                        <div class="card__pic">
+                                            <img class="card__img" 
+                                                srcset="/optimize/845-less-tour-pic-two.webp 248w,
+                                                /optimize/600-less-tour-pic-two.webp 249w"
+                                                sizes="(max-width: 845px) 248px,
+                                                (max-width: 1200px) 249px"
+                                                src="/images/tour-pic-two.webp" alt="ibiza-ibz">
+                                        </div>
+                                        <div class="card__content">
+                                            <h4 class="card__title">Ibiza, IBZ</h4>
+                                            <p class="card__sub">El Swing Ibiza</p>
+                                            <time datetime="2021-07-10" class="card__time">Jul 10 2021</time>
+                                            <a class="card__link" href="#" target="_blank">Tickets</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="slider__item">
-                        <div class="card">
-                            <div class="card__pic">
-                                <img class="card__img" 
-                                    srcset="/optimize/845-less-tour-pic-three.webp 248w,
-                                    /optimize/600-less-tour-pic-three.webp 249w"
-                                    sizes="(max-width: 845px) 248px,
-                                    (max-width: 1200px) 249px"
-                                    src="/images/tour-pic-three.webp" alt="el-swing-ibz">
-                            </div>
-                            <div class="card__content">
-                                <h4 class="card__title">Ibiza, IBZ</h4>
-                                <p class="card__sub">Swag Ibiza Club</p>
-                                <time datetime="2021-08-07" class="card__time">Jul 08 2021</time>
-                                <a class="card__link" href="#" target="_blank">Tickets</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="slider__item">
-                        <div class="card">
-                            <div class="card__pic">
-                                <img class="card__img" 
-                                    srcset="/optimize/845-less-tour-pic-two.webp 248w,
-                                    /optimize/600-less-tour-pic-two.webp 249w"
-                                    sizes="(max-width: 845px) 248px,
-                                    (max-width: 1200px) 249px"
-                                    src="/images/tour-pic-two.webp" alt="ibiza-ibz">
-                            </div>
-                            <div class="card__content">
-                                <h4 class="card__title">Ibiza, IBZ</h4>
-                                <p class="card__sub">El Swing Ibiza</p>
-                                <time datetime="2021-07-10" class="card__time">Jul 10 2021</time>
-                                <a class="card__link" href="#" target="_blank">Tickets</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="slider__item">
-                        <div class="card">
-                            <div class="card__pic">
-                            <img class="card__img" 
-                                srcset="/optimize/845-less-tour-pic-one.webp 248w,
-                                /optimize/600-less-tour-pic-one.webp 249w"
-                                sizes="(max-width: 845px) 248px,
-                                (max-width: 1200px) 249px"
-                                src="/images/tour-pic-one.webp" alt="chandler-az">
-                            </div>
-                            <div class="card__content">
-                                <h4 class="card__title">Chandler, AZ</h4>
-                                <p class="card__sub">The Park at Wild Horse Pass</p>
-                                <time datetime="2021-04-02" class="card__time">Apr 02 2021</time>
-                                <a class="card__link" href="#" target="_blank">Tickets</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="slider__item">
-                        <div class="card">
-                            <div class="card__pic">
-                                <img class="card__img" 
-                                    srcset="/optimize/845-less-tour-pic-three.webp 248w,
-                                    /optimize/600-less-tour-pic-three.webp 249w"
-                                    sizes="(max-width: 845px) 248px,
-                                    (max-width: 1200px) 249px"
-                                    src="/images/tour-pic-three.webp" alt="el-swing-ibz">
-                            </div>
-                            <div class="card__content">
-                                <h4 class="card__title">Ibiza, IBZ</h4>
-                                <p class="card__sub">Swag Ibiza Club</p>
-                                <time datetime="2021-08-07" class="card__time">Jul 08 2021</time>
-                                <a class="card__link" href="#" target="_blank">Tickets</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="slider__item">
-                        <divcard">
-                            <div class="card__pic">
-                                <img class="card__img" 
-                                    srcset="/optimize/845-less-tour-pic-two.webp 248w,
-                                    /optimize/600-less-tour-pic-two.webp 249w"
-                                    sizes="(max-width: 845px) 248px,
-                                    (max-width: 1200px) 249px"
-                                    src="/images/tour-pic-two.webp" alt="ibiza-ibz">
-                            </div>
-                            <div class="card__content">
-                                <h4 class="card__title">Ibiza, IBZ</h4>
-                                <p class="card__sub">El Swing Ibiza</p>
-                                <time datetime="2021-07-10" class="card__time">Jul 10 2021</time>
-                                <a class="card__link" href="#" target="_blank">Tickets</a>
-                            </div>
-                        </div>
-                    </div>          
                 </div>
             </section>
         </main>
@@ -382,9 +333,6 @@
                 <p class="footer__copyright">&#169; 2020 DJ bright lights.</p>
             </div>
         </footer>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script type="text/javascript" src="js/slick.min.js"></script>
         <script type="module" src="./src/js/main.js"></script>
     </body>
 </html>

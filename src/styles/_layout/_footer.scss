@@ -29,28 +29,40 @@
             margin-right: 30px;
         }
 
-        &:first-child &__link {
-            background-image: url("../../../icons/apple-link.svg");
+        &:first-child .footer {
+            &__link {
+                background-image: url("../../../icons/apple-link.svg");
+            }
         }
 
-        &:nth-child(2) &__link {
-            background-image: url("../../../icons/spoty-link.svg");
+        &:nth-child(2) .footer {
+            &__link {
+                background-image: url("../../../icons/spoty-link.svg");
+            }
         }
 
-        &:nth-child(3) &__link {
-            background-image: url("../../../icons/insta-link.svg");
+        &:nth-child(3) .footer {
+            &__link {
+                background-image: url("../../../icons/insta-link.svg");
+            }
         }
 
-        &:nth-child(4) &__link {
-            background-image: url("../../../icons/youtube-link.svg");
+        &:nth-child(4) .footer {
+            &__link {
+                background-image: url("../../../icons/youtube-link.svg");
+            }
         }
 
-        &:nth-child(5) &__link {
-            background-image: url("../../../icons/twitter-link.svg");
+        &:nth-child(5) .footer {
+            &__link {
+                background-image: url("../../../icons/twitter-link.svg");
+            }
         }
 
-        &:last-child &__link {
-            background-image: url("../../../icons/fb-link.svg");
+        &:last-child .footer {
+            &__link {
+                background-image: url("../../../icons/fb-link.svg");
+            }
         }
     }
 

@@ -1,4 +1,5 @@
-import './styles/main.scss' 
+import '../styles/main.scss'
+import './components/embla.js'
 
 const promotedPlayer = document.querySelector(".player");
 const playerBtn = promotedPlayer.querySelector(".control__play")
@@ -97,24 +98,4 @@ timeline.addEventListener("change", () => {
     if(!audio.paused) {
       requestAnimationFrame(whilePlaying);
   }
-});
-
-$(".slider__carousel").slick({
-  infinite: true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 920,
-      settings: {
-        slidesToShow: 2
-      }
-    },
-    {
-      breakpoint: 601,
-      settings: {
-        slidesToShow: 1
-      }
-    }
-  ]
 });
