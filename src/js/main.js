@@ -1,3 +1,5 @@
+import './styles/main.scss' 
+
 const promotedPlayer = document.querySelector(".player");
 const playerBtn = promotedPlayer.querySelector(".control__play")
 const audio = promotedPlayer.querySelector(".player__audio")

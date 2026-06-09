@@ -1,10 +1,10 @@
-@use '../vars';
-@use '../mixins';
+@use '../_abstracts/vars';
+@use '../_abstracts/mixins';
 
 @media (max-width: 768px) {
     body {
         max-width: 768px;
-        background-image: url("../img/media/768-back.webp");
+        background-image: url("../../../optimize/768-back.webp");
     }
 
     .main {
@@ -168,7 +168,7 @@
     body {
         margin: 0 auto;
         max-width: 480px;
-        background-image: url("../img/media/480-back.webp");
+        background-image: url("../../../optimize/480-back.webp");
     }
 
     .main {
@@ -226,12 +226,12 @@
 
         &__play {
             @include mixins.mini-btn-play();
-            background-image: url("../img/media/480-pause-button.svg");
+            background-image: url("../../../optimize/480-pause-button.svg");
         }
 
         &__pause {
             @include mixins.mini-btn-play();
-            background-image: url("../img/media/play-button-480.svg");
+            background-image: url("../../../optimize/play-button-480.svg");
         }
     }
 
@@ -257,15 +257,15 @@
             width: 250px;
 
             &:first-child {
-                background-image: url("../img/media/480-first.webp");
+                background-image: url("../../../optimize/480-first.webp");
             }
 
             &:nth-child(2) {
-                background-image: url("../img/media/480-second.webp");
+                background-image: url("../../../optimize/480-second.webp");
             }
 
             &:last-child {
-                background-image: url("../img/media/480-third.webp");
+                background-image: url("../../../optimize/480-third.webp");
             }
         }
 
@@ -337,27 +337,27 @@
 
         &__item {
             &:first-child &__link {
-                background-image: url("../img/media/apple-480.svg");
+                background-image: url("../../../optimize/apple-480.svg");
             }
 
             &:nth-child(2) &__link {
-                background-image: url("../img/media/spoty-480.svg");
+                background-image: url("../../../optimize/spoty-480.svg");
             }
 
             &:nth-child(3) &__link {
-                background-image: url("../img/media/insta-480.svg");
+                background-image: url("../../../optimize/insta-480.svg");
             }
 
             &:nth-child(4) &__link {
-                background-image: url("../img/media/youtube-480.svg");
+                background-image: url("../../../optimize/youtube-480.svg");
             }
 
             &:nth-child(5) &__link {
-                background-image: url("../img/media/twitter-480.svg");
+                background-image: url("../../../optimize/twitter-480.svg");
             }
 
             &:last-child &__link {
-                background-image: url("../img/media/fb-480.svg");
+                background-image: url("../../../optimize/fb-480.svg");
             }
         }
 
@@ -380,12 +380,12 @@
     }
 
     .slick-next {
-        background-image: url("../img/media/480-arrow-next.svg");
+        background-image: url("../../../optimize/480-arrow-next.svg");
         right: 0;
     }
 
     .slick-prev {
-        background-image: url("../img/media/480-arrow-prev.svg");
+        background-image: url("../../../optimize/480-arrow-prev.svg");
         left: 0;
     }
 }

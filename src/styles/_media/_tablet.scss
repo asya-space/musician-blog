@@ -1,9 +1,10 @@
-@use '../vars';
+@use '../_abstracts/vars';
+@use '../_abstracts/mixins';
 
 @media (max-width: 1024px) {
     body {
         max-width: 1024px;
-        background-image: url("../img/media/1024-back.webp");
+        background-image: url("../../../optimize/1024-back.webp");
     }
 
     .main {

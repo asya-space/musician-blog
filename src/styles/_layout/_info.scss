@@ -17,7 +17,7 @@
             right: 80px;
             width: 370px;
             height: 483px;
-            background-image: url("../img/media-img.webp");
+            background-image: url("../../../images/media-img.webp");
             background-repeat: vars.$norep;
             border-radius: 30px 0px;
             z-index: 70; 
@@ -30,7 +30,7 @@
     &::before {
         top: 50px;
         right: 95px;
-        background-image: url("../img/front-news.webp");
+        background-image: url("../../../images/front-news.webp");
         z-index: 10;
         @include mixins.before-after();
     }
@@ -38,7 +38,7 @@
     &::after {
         top: 110px;
         right: 0;
-        background-image: url("../img/back-news.png");
+        background-image: url("../../../images/back-news.png");
         z-index: 5;
         @include mixins.before-after();
     }
@@ -59,7 +59,7 @@
         line-height: 27px;
         white-space: nowrap;
         color: var(--light);
-        background-image: url("../img/purple-icon.svg");
+        background-image: url("../../../icons/purple-icon.svg");
         background-repeat: vars.$norp;
 
         &:not(:nth-child(2)) {
@@ -78,7 +78,7 @@
         font-weight: 700;
         font-size: 48px;
         line-height: 72px;
-        background-image: url("../img/waves.svg");
+        background-image: url("../../../icons/waves.svg");
         background-repeat: vars.$norp;
         background-position: bottom 18px left;
     }
@@ -116,7 +116,7 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 27px;
-        background-image: url("../img/quotes.svg");
+        background-image: url("../../../icons/quotes.svg");
         background-repeat: vars.$norep;
         border-bottom: 1px solid rgba(255, 255, 255, 0.6);
     }

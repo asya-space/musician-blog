@@ -24,15 +24,15 @@
         }
 
         &:first-child {
-            background-image: url("../img/first.webp");
+            background-image: url("../../../images/first.webp");
         }
 
         &:nth-child(2) {
-            background-image: url("../img/second.webp");
+            background-image: url("../../../images/second.webp");
             }
 
         &:last-child {
-            background-image: url("../img/third.webp");
+            background-image: url("../../../images/third.webp");
         }
     }
 

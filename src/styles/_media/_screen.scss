@@ -1,4 +1,5 @@
-@use '../vars';
+@use '../_abstracts/vars';
+@use '../_abstracts/mixins';
 
 @media (max-width: 1536px) {
     body {

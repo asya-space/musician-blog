@@ -12,9 +12,9 @@
 @use './_layout/gallery';
 @use './_components/slider';
 @use './_layout/footer';
-@use './_abstracts/_media/screen';
-@use './_abstracts/_media/tablet';
-@use './_abstracts/_media/mini';   
+@use './_media/screen';
+@use './_media/tablet';
+@use './_media/mini';   
 
 .header {
     display: vars.$flx;

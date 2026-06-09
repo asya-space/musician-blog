@@ -30,27 +30,27 @@
         }
 
         &:first-child &__link {
-            background-image: url("../img/apple-link.svg");
+            background-image: url("../../../icons/apple-link.svg");
         }
 
         &:nth-child(2) &__link {
-            background-image: url("../img/spoty-link.svg");
+            background-image: url("../../../icons/spoty-link.svg");
         }
 
         &:nth-child(3) &__link {
-            background-image: url("../img/insta-link.svg");
+            background-image: url("../../../icons/insta-link.svg");
         }
 
         &:nth-child(4) &__link {
-            background-image: url("../img/youtube-link.svg");
+            background-image: url("../../../icons/youtube-link.svg");
         }
 
         &:nth-child(5) &__link {
-            background-image: url("../img/twitter-link.svg");
+            background-image: url("../../../icons/twitter-link.svg");
         }
 
         &:last-child &__link {
-            background-image: url("../img/fb-link.svg");
+            background-image: url("../../../icons/fb-link.svg");
         }
     }
 
