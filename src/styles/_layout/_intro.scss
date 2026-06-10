@@ -8,17 +8,16 @@
     &__title {
         margin-bottom: 10px;
         font-weight: 700;
-        font-size: 48px;
-        line-height: 72px;
+        @include mixins.clamp();
     }
 
     &__song {
         margin-bottom: 60px;
         font-family: vars.$pop;
         font-weight: 700;
-        font-size: 100px;
+        font-size: clamp(48px, 8vw, 100px);
         font-style: normal;
-        line-height: 150px;
+        line-height: 1.2;
         -webkit-text-fill-color: transparent;
         -webkit-text-stroke-width: 0.1px;
         -webkit-text-stroke-color: vars.$light;

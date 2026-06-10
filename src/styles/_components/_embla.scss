@@ -49,7 +49,8 @@
     display: block;
     position: relative;
     padding: 0;
-    width: 350px;
+    width: vars.$full;
+    max-width: 350px;
     height: 473px;
     background-color: #2F2B2B;
     border-radius: 30px 0px;
@@ -59,7 +60,7 @@
     &__img {
         display: inline-block;
 	    max-width: vars.$full;
-        width: 350px;
+        width: vars.$full;
         height: 280px;
         border-radius: 30px 0px;
     }

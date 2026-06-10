@@ -2,28 +2,34 @@
 @use './_abstracts/vars';
 @use './_abstracts/mixins';
 @use './_abstracts/reset';
+
 @use './_layout/nav';
 @use './_layout/intro';
-@use './_components/controller';
+
 @use './_layout/news';
 @use './_layout/info';
-@use './_components/tracks';
+
 @use './_layout/follow';
 @use './_layout/gallery';
-@use './_components/embla';
 @use './_layout/footer';
-@use './_media/screen';
-@use './_media/tablet';
-@use './_media/mini';   
+
+@use './_components/controller';
+@use './_components/tracks';
+@use './_components/embla';
+
+@use './_media/1024' as tablet;
+@use './_media/768' as mobile;
+@use './_media/480' as small-mobile;
 
 .header {
     display: vars.$flx;
     padding-top: 42px;
-    margin-bottom: 161px;
+    margin-bottom: 160px;
     max-width: 100%;
     
     .container {
         display: vars.$flx;
+        justify-content: vars.$ctr;
         align-items: vars.$ctr;
         margin: 0 auto;
     }
@@ -36,8 +42,8 @@
 
 .main {
     margin: 0 auto;
-    max-width: 1270px;
-    padding: 161px 50px 0 50px;
+    width: min(1270px, 100%);
+    padding: 161px clamp(15px, 4vw, 50px) 0;
 }
 
 /* use input[type="range"] only, it's important for styling and design */
@@ -47,11 +53,6 @@
 
 input[type="range"] {
     @include mixins.timeline();
-}
-
-input[type="range"]::-webkit-slider-thumb,
-input[type="range"]::-moz-range-thumb {
-    @include mixins.sliderThumb();
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -69,6 +70,11 @@ input[type="range"]::-ms-track {
 
 input[type="range"]::-webkit-slider-runnable-track {
     @include mixins.range();
+}
+
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb {
+    @include mixins.sliderThumb();
 }
 
 .screen {

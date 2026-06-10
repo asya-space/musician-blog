@@ -26,7 +26,7 @@
         url('../../../icons/seek-time-violet.svg');
     background-size: 
         100 100%,
-        0% 0%;
+        0% 100%;
     background-position:
         left center,
         left center;
@@ -36,17 +36,10 @@
     cursor: vars.$point;
 }
 
-@mixin sliderThumb {
-    appearance: vars.$no;
-    box-sizing: content-box;
-    width: 2px;
-    height: 20px;
-    background-color: vars.$violet;
-    cursor: vars.$point;
-}
-
 @mixin range {
-    width: 887px;
+    width: 100%;
+    flex: 1;
+    min-width: 0;
     height: 3px;
     cursor: vars.$point;
 }
@@ -152,7 +145,8 @@
 
 @mixin panel {
     padding-left: 60px;
-    width: 60%;
+    width: vars.$full;
+    max-width: 700px;
 }
 
 @mixin seek-buffered {
@@ -161,4 +155,18 @@
     position: relative;
     height: 50px;
     cursor: vars.$point;
+}
+
+@mixin sliderThumb {
+    appearance: vars.$no !important;
+    box-sizing: content-box;
+    width: 2px;
+    height: 20px;
+    background-color: vars.$violet;
+    cursor: vars.$point;
+}
+
+@mixin clamp {
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.3;
 }
