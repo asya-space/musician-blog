@@ -1,0 +1,136 @@
+@use '../_abstracts/vars';
+@use '../_abstracts/mixins';
+
+@media (width < 1024px) {
+    .controller {
+        &__timeline, input[type="range"] {
+            width: 30rem;
+            max-width: 40rem;
+        }
+    }
+}
+
+@media (max-width: vars.$mobile) {
+    .header {
+        margin-bottom: 80px;
+
+        .container {
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        &__logo {
+            margin-right: 0;
+        }
+    }
+
+    .nav {
+        &__list {
+            justify-content: vars.$ctr;
+            gap: 20px;
+        }
+
+        &__item {
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .intro {
+        margin-bottom: 80px;
+
+        .container {
+            text-align: vars.$ctr;
+        }
+
+        &__song {
+            margin-bottom: 30px;
+        }
+    }
+
+    .controller {
+        justify-content: vars.$ctr;
+    }
+
+    .tracks {
+        .container {
+            flex-direction: column;
+            align-items: vars.$ctr;
+        }
+    }
+
+    .playlist {
+        padding-left: 0;
+    }
+
+    .follow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .gallery {
+        &__list {
+            grid-template-columns: repeat(2, 255px);
+        }
+    }
+
+    #one {
+        display: vars.$no;
+    }
+
+    #five {
+        grid-column: span 2;
+    }
+
+    .slider {
+        .embla {
+            &__slide {
+                flex-basis: 100%;
+            }
+
+            &__arrow {
+                z-index: 5;
+            }
+
+            &__prev {
+                left: 40px;
+            }
+
+            &__next {
+                right: 40px;
+            }
+        }
+    }
+
+    .card {
+        margin: 0 auto;
+    }
+
+    .media {
+        margin-bottom: 120px; /* ??? */
+    }
+
+    .information .container::after,
+    .info::before,
+    .info::after {
+        display: vars.$no;
+    }
+
+    .info {
+        margin-bottom: 120px;
+    }
+
+    .footer {
+        &__list {
+            gap: 20px;
+        }
+
+        &__item {
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+        }
+    }
+}
