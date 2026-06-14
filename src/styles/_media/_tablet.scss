@@ -1,0 +1,126 @@
+@use '../_abstracts/vars';
+@use '../_abstracts/mixins';
+
+@media (max-width: 1280px) {
+    .slider {
+        .embla {
+            &__prev {
+                left: -40px;
+            }
+
+            &__next {
+                right: -40px;
+            }
+        }
+    }
+}
+
+@media (max-width: vars.$desktop) {
+    .slider {
+        .embla {
+            &__viewport {
+                transform: translateX(0);
+            }
+        }
+    }
+}
+
+@media (max-width: vars.$tablet) {
+    .main {
+        padding-top: 120px;
+    }
+
+    .news {
+        &__list {
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            margin-right: 0 !important;
+        }
+    }
+
+    .information {
+        .container {
+            &::after {
+                right: 0;
+            }
+        }
+    }
+
+    .info {
+        &::before {
+            right: 20px;
+        }
+
+        &::after {
+            right: -40px;
+        }
+    }
+
+    .controller {
+        &__play,
+        &__pause {
+            margin-right: 0;
+        }
+    }
+
+    .playlist {
+        padding-left: 0;
+    }
+
+    .tracks {
+        .container {
+            gap: 50px;
+        }
+    }
+
+    .gallery {
+        &__list {
+            grid-template-columns: repeat(3, 255px);
+            justify-content: vars.$ctr;
+        }
+    }
+
+    #four {
+        display: vars.$no;
+    }
+
+    .slider {
+        .embla {
+            &__viewport {
+                margin: 0 auto;
+                max-width: 90%;
+            }
+
+            &__slide {
+                flex-basis: 40%;
+            }
+
+            &__prev {
+                left: -20px;
+            }
+
+            &__next {
+                right: -20px;
+            }
+        }
+    }
+
+    /* main audio */
+    .controller {
+        &__timeline, input[type="range"] {
+            margin-right: 10px;
+            width: 50rem;
+            max-width: 50rem;
+        }
+    }
+
+    /* list with audio and controller */
+    .player {
+        &__panel {
+            padding-left: 0;
+        }
+    }
+}
