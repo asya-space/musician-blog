@@ -47,12 +47,12 @@
 }
 
 /* use input[type="range"] only, it's important for styling and design */
-#playon {
-    margin-top: 8px;
-}
 
 input[type="range"] {
     @include mixins.timeline();
+    width: vars.$full;
+    max-width: vars.$no;
+    min-width: 0;
 }
 
 input[type="range"]::-moz-range-thumb {

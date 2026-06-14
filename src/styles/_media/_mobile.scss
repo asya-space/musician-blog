@@ -60,10 +60,6 @@
         }
     }
 
-    .playlist {
-        padding-left: 0;
-    }
-
     .follow {
         flex-direction: column;
         align-items: flex-start;
@@ -131,6 +127,30 @@
             &:not(:last-child) {
                 margin-right: 0;
             }
+        }
+    }
+}
+
+@media (width < 600px) {
+    #five {
+        display: vars.$no;
+    }
+
+    .slider {
+        .embla {
+            &__prev {
+                left: 0;
+            }
+            
+            &__next {
+                right: 0;
+            }
+        }
+    }
+
+    .gallery {
+        &__list {
+           grid-template-columns: repeat(1, 255px);   
         }
     }
 }
