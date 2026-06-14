@@ -17,9 +17,9 @@
 @use './_components/tracks';
 @use './_components/embla';
 
-@use './_media/1024' as tablet;
-@use './_media/768' as mobile;
-@use './_media/480' as small-mobile;
+@use './_media/tablet';
+@use './_media/mobile';
+@use './_media/small-mobile';
 
 .header {
     display: vars.$flx;

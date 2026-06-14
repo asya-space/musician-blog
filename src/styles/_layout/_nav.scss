@@ -1,5 +1,11 @@
 @use '../_abstracts/vars';
 
+.header {
+    .container {
+        padding: 0 30px;
+    }
+}
+
 .nav {
     &__list {
         display: vars.$flx;
