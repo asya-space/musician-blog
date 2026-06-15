@@ -4,10 +4,10 @@ const runBtn = document.querySelectorAll('.controller__play'),
 function playPause() {
     if(song.paused) {
         song.play();
-        runBtn[0].className = 'controller__pause';
+        runBtn[0].className = 'controller__play';
     } else {
         song.pause();
-        runBtn[0].className = 'controller__play';
+        runBtn[0].className = 'controller__pause';
     }
 }
 
@@ -51,5 +51,5 @@ function showCommonTime() {
     if (!Number.isFinite(song.duration)) return;
     commonTime[0].textContent = showTime(song.duration);
 }
-showCommonTime();
+song.addEventListener('loadedmetadata', showCommonTime);
 song.addEventListener('timeupdate', updPlayerAndTiming);
