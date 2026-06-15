@@ -1,3 +1,4 @@
 import '../styles/main.scss'
-import './components/embla.js'
+import './components/_embla.js'
 import './components/_player.js'
+import './components/_playlist.js'
