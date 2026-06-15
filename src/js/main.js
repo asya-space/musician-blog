@@ -1,7 +1,8 @@
 import '../styles/main.scss'
 import './components/embla.js'
+import './components/_player.js'
 
-const promotedPlayer = document.querySelector(".player");
+/* const promotedPlayer = document.querySelector(".player");
 const playerBtn = promotedPlayer.querySelector(".control__play")
 const audio = promotedPlayer.querySelector(".player__audio")
 const timeline = promotedPlayer.querySelector(".control__timeline")
@@ -17,7 +18,7 @@ function playPause() {
     }
 }
 
-controlBtn.addEventListener("click", playPause);
+//controlBtn.addEventListener("click", playPause);
 
 audio.addEventListener("ended", function() {
   controlBtn.className = "control__play";
@@ -98,4 +99,4 @@ timeline.addEventListener("change", () => {
     if(!audio.paused) {
       requestAnimationFrame(whilePlaying);
   }
-});
+}); */
