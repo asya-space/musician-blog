@@ -49,10 +49,22 @@
 /* use input[type="range"] only, it's important for styling and design */
 
 input[type="range"] {
-    @include mixins.timeline();
+    -webkit-appearance: vars.$no;
+    appearance: vars.$no;
     width: vars.$full;
     max-width: vars.$no;
     min-width: 0;
+    @include mixins.timeline();
+    --progress: 0%;
+    background: linear-gradient(
+        to right,
+        vars.$violet 0%,
+        vars.$violet var(--progress),
+        rgba(255,255,255,.1) var(--progress),
+        rgba(255,255,255,.1) 100%
+  );
+    border-radius: 999px;
+    height: 3px;
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -61,6 +73,8 @@ input[type="range"]::-moz-range-thumb {
 
 input[type="range"]::-webkit-slider-runnable-track {
     @include mixins.runnable();
+    @include mixins.range();
+    background: transparent;
 }
 
 input[type="range"]::-moz-range-track,
@@ -68,24 +82,11 @@ input[type="range"]::-ms-track {
     @include mixins.rangeTrack();
 }
 
-input[type="range"]::-webkit-slider-runnable-track {
-    @include mixins.range();
-}
 
-input[type="range"]::-webkit-slider-thumb,
-input[type="range"]::-moz-range-thumb {
+input[type="range"]::-webkit-slider-thumb {
     @include mixins.sliderThumb();
 }
 
-.screen {
-    &__email {
-        &:focus,
-        &:active {
-            @include mixins.link();
-        }
-
-        &:hover {
-            @include mixins.hover();
-        }
-    }
+input[type="range"]::-moz-range-thumb {
+    @include mixins.sliderThumb();
 }

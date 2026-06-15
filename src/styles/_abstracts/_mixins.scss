@@ -20,23 +20,11 @@
     padding: 0;
     height: 25px;
     background-color: transparent;
-    background-image: 
-        url('../../../icons/seek-time.svg'), 
-        url('../../../icons/seek-time-violet.svg');
-    background-size: 
-        100 100%,
-        0% 100%;
-    background-position:
-        left center,
-        left center;
-    background-repeat: 
-        vars.$norp,
-        vars.$norp;
     cursor: vars.$point;
 }
 
 @mixin range {
-    width: 100%;
+    width: vars.$full;
     flex: 1;
     min-width: 0;
     height: 3px;
@@ -44,7 +32,7 @@
 }
 
 @mixin runnable {
-    width: 100%;
+    width: vars.$full;
     height: 3px;
     background-color: rgba(255, 255, 255, 0.1);
     cursor: vars.$point;
@@ -108,7 +96,7 @@
     transition: color .3s ease-in-out;
 }
 
-@mixin slider {
+@mixin slider /* embla */ {
     text-decoration: vars.$no;
     color: vars.$light;
 }
@@ -156,11 +144,15 @@
 }
 
 @mixin sliderThumb {
-    appearance: vars.$no !important;
+    -webkit-appearance: vars.$no;
+    appearance: vars.$no;
+    -webkit-box-sizing: content-box;
     box-sizing: content-box;
     width: 2px;
     height: 20px;
     background-color: vars.$violet;
+    -webkit-transform: translateY(-35%);
+    transform: translateY(-35%);
     cursor: vars.$point;
 }
 
