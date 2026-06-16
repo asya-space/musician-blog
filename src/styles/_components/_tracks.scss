@@ -41,13 +41,15 @@
         cursor: vars.$point;
         transition: color .3s ease-in-out;
 
+        &:hover,
         &:active {
-            @include mixins.active();
+            color: vars.$violet;
+            opacity: 0.8;
         }
     }
 
     .active {
-        @include mixins.active();
+        @include mixins.interact();
     }
 }
 
