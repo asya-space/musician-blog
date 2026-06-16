@@ -1,203 +1,64 @@
-export const song = document.querySelector('.intro__audio');
-const runBtn = document.querySelectorAll('.controller__play'),
-      progress = document.querySelectorAll('.controller__timeline');
-function playPause() {
-    if(song.paused) {
-        song.play();
-        runBtn[0].className = 'controller__play';
+const song = document.querySelector('.intro__audio'),
+      runBtn = document.querySelectorAll('.controller__play')[0],
+      progress = document.querySelectorAll('.controller__timeline')[0];
+
+// 1) audio = any audio file, universal arg;
+export function playPause(audio, btn) {
+    if(audio.paused) {
+        audio.play();
+        btn.className = 'controller__play';
     } else {
-        song.pause();
-        runBtn[0].className = 'controller__pause';
+        audio.pause();
+        btn.className = 'controller__pause';
     }
 }
 
-runBtn[0].addEventListener('click', playPause);
-song.addEventListener('ended', function() {
-    runBtn[0].className = 'controller__play';
-})
+runBtn.addEventListener('click', () => playPause(song, runBtn));
 
-progress[0].addEventListener('input', userChangeProgress);
+export function changeBtn(audio, btn) {
+    audio.addEventListener('ended', function() {
+        btn.className = 'controller__play';
+    });
+}
+changeBtn(song, runBtn);
 
-function userChangeProgress() {
-    if (!Number.isFinite(song.duration)) return;
-    const userTime = (progress[0].value / 100) * song.duration;
-    song.currentTime = userTime;
-    progress[0].style.setProperty('--progress', `${progress[0].value}%`);
+progress.addEventListener('input', () => userChangeProgress(song, progress));
+
+// 2) display progress bar
+export function userChangeProgress(audio, timeline) {
+    if (!Number.isFinite(audio.duration)) return;
+    const userTime = (timeline.value / 100) * audio.duration;
+    audio.currentTime = userTime;
+    timeline.style.setProperty('--progress', `${timeline.value}%`);
 }
 
-const currentTime = document.querySelectorAll('.controller__current'),
-      commonTime = document.querySelectorAll('.controller__duration');
-
 /* view timing, secs and mins how to display it */
-const showTime = (num) => {
+export const showTime = (num) => {
     const min = Math.floor(num / 60),
           sec = Math.floor(num % 60),
           currSec = sec < 10 ? `0${sec}`:`${sec}`;
     return `${min}:${currSec}`;
 }
 
-function updPlayerAndTiming() {
+const currentTime = document.querySelectorAll('.controller__current')[0],
+      commonTime = document.querySelectorAll('.controller__duration')[0];
+// 3) timing 00:00 + auto update thumb on player
+//  timeline = input[type="range"] = progress bar
+export function updPlayerAndTiming(audio, timeline, current) {
     // loaded audio/metadata
-    if (!Number.isFinite(song.duration)) return;
-    const posInPercent = (song.currentTime / song.duration) * 100;
-    progress[0].value = posInPercent;
-    progress[0].style.setProperty('--progress', `${posInPercent}%`);
+    if (!Number.isFinite(audio.duration)) return;
+    const posInPercent = (audio.currentTime / audio.duration) * 100;
+    timeline.value = posInPercent;
+    timeline.style.setProperty('--progress', `${posInPercent}%`);
 
     // display time 0:00-2:54
-    currentTime[0].textContent = showTime(Math.floor(song.currentTime));
+    current.textContent = showTime(Math.floor(audio.currentTime));
 }
 
-export function showCommonTime() {
-    if (!Number.isFinite(song.duration)) return;
-    commonTime[0].textContent = showTime(song.duration);
+export function showCommonTime(audio, common) {
+    if (!Number.isFinite(audio.duration)) return;
+    common.textContent = showTime(audio.duration);
 }
-song.addEventListener('loadedmetadata', showCommonTime);
-song.addEventListener('timeupdate', updPlayerAndTiming);
-
-// old code, 2023
-/* const promotedPlayer = document.querySelector(".player__container");
-const playerControls = promotedPlayer.querySelector(".player__control");
-const playerPlayList = promotedPlayer.querySelectorAll(".playlist__item");
-const playerSongs = promotedPlayer.querySelectorAll(".playlist__song");
-const playButton = promotedPlayer.querySelector(".player__play");
-const nextPrev = playerPlayList.length - 1;
-let count = 0;
-let audio = playerSongs[count];
-let isPlay = false;
-let isMove = false;
-const timeline = playerControls.querySelector(".player__timeline");
-
-// play-pause/select-track
-
-function next(index) {
-  count = index || count;
-    if (count == nextPrev) {
-    count = count;
-    return;
-    }
-  count++;
-  run();
-}
-
-function back(index) {
-  count = index || count;
-    if (count == 0) {
-    count = count;
-    return;
-    }
-  count--;
-  run();
-  }
-
-function selectSong() {
-  audio = playerSongs[count];
-  for (const item of playerSongs) {
-    if (item != audio) {
-    item.pause();
-    }
-  } if (isPlay) audio.play();
-}
-
-function run() {
-  selectSong();
-}
-
-function playSong() {
-  if (audio.paused) {
-      audio.play();
-      playButton.className = "player__play";
-  } else { 
-      audio.pause();
-      playButton.className = "player__pause";
-  }
-}
-
-// timeline
-import { calculateTime, changeTimelinePosition, changeSeek, displayBufferedAmount, whilePlaying } from "./main.js";
-
-
-const durationCont = playerControls.querySelector(".player__duration");
-const currentCont = playerControls.querySelector(".player__current");
-
-function timer() {
-  let min = parseInt(audio.duration / 60);
-  if (min < 10) min = "0" + min;
-  let sec = parseInt(audio.duration % 60);
-  if (sec < 10) sec = "0" + sec;
-  return `${min}:${sec}`;
-};
-
-function showDuration() {
-  setInterval(() => {
-  const songTime = audio.duration 
-  durationCont.textContent = timer(songTime);
-  }, 100);
-}
-
-timeline.addEventListener("change", changeSeek);
-
-if (audio.readyState > 0) {
-  showDuration();
-  displayBufferedAmount();
-} else {
-  audio.addEventListener("loadedmetadata", () => {
-      showDuration();
-      displayBufferedAmount();
-  });
-}
-
-// evts
-playButton.addEventListener("click", () => {
-  isPlay = true;
-  playSong();
-});
-
-playerSongs.forEach(audio => {
-  audio.ontimeupdate = changeTimelinePosition;
-  audio.addEventListener("progress", displayBufferedAmount);
-})
-
-timeline.addEventListener("input", () => {
-  currentCont.textContent = calculateTime(timeline.value);
-  if(!audio.paused) {
-    cancelAnimationFrame(raf);
-}
-});
-
-timeline.addEventListener("change", () => {
-  audio.currentTime = timeline.value;
-  if(!audio.paused) {
-    requestAnimationFrame(whilePlaying);
-  }
-});
-
-document.addEventListener("pointerup", () => {
-  isMove = false;
-  audio.muted = false;
-});
-
-playerPlayList.forEach((item, index) => {
-  item.addEventListener("click", function() {
-  if (index > count) {
-    next(index - 1);
-    return;
-  }
-  if (index < count) {
-    back(index + 1);
-    return;
-    }
-  });
-});
-
-const titleSong = promotedPlayer.querySelectorAll(".playlist__title");
-
-titleSong.forEach((el) => {
-  el.addEventListener('click', function () {
-    el.classList.add('playlist__active');
-  })})
-
-  titleSong.forEach((el) => {
-  el.addEventListener('mouseout', function () {
-    el.classList.remove('playlist__active');
-  })}) */ 
+song.addEventListener('loadedmetadata', () => showCommonTime(song, commonTime));
+song.addEventListener('timeupdate', () => updPlayerAndTiming(song, progress, currentTime));
 
