@@ -21,6 +21,10 @@
 @use './_media/mobile';
 @use './_media/small-mobile';
 
+* {
+    scroll-behavior: smooth;
+}
+
 .header {
     display: vars.$flx;
     padding-top: 42px;
