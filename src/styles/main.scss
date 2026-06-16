@@ -51,6 +51,7 @@
 }
 
 /* use input[type="range"] only, it's important for styling and design */
+/* no className, just input */
 
 input[type="range"] {
     -webkit-appearance: vars.$no;
