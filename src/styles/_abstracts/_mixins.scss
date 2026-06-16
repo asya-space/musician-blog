@@ -78,7 +78,7 @@
     text-decoration: vars.$no;
 }
 
-@mixin active {
+@mixin interact {
     font-weight: 600;
     font-size: 18px;
     line-height: 27px;
