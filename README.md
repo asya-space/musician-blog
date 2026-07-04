@@ -36,7 +36,7 @@ A responsive promotional website for DJ Bright Lights featuring custom audio pla
 - Deploying a Vite project to Vercel
 
 ## Screenshots
-<img width="2435" height="1208" alt="image" src="https://github.com/user-attachments/assets/adc15000-da4c-448e-936f-a9e8ba187b70" />
+<img width="2366" height="1121" alt="image" src="https://github.com/user-attachments/assets/a7cc58e3-e561-4c65-a538-588e277be286" />
 <img width="2427" height="1225" alt="image" src="https://github.com/user-attachments/assets/0c5276c2-f3d9-4d71-940a-831e9942691f" />
 
 ## Installation
